@@ -5,9 +5,9 @@
 class Produk
 {
     public $judul = "judul",
-        $penulis = "penulis",
-        $penerbit = "penerbit",
-        $harga = 10000;
+    $penulis = "penulis",
+    $penerbit = "penerbit",
+    $harga = 10000;
 
     public function getLabel()
     {
@@ -15,6 +15,8 @@ class Produk
         // tidak bisa menambahkan variable diluar function seperti $penulis, $penerbit,
         // karena akan membuat variable baru, agar variablenya
         // tetap sama diperlukanlah $this->penulis, $this->penerbit
+        //  lebih tepatnya $this berfungsi untuk mengambil isi dari property
+        // dari kelas yang bersangkutan
         return "$this->penulis, $this->penerbit";
     }
 }
@@ -27,7 +29,7 @@ $produk1->penulis = "Galang";
 // var_dump($produk1);
 
 // kita juga bisa menambahkan property baru setelah objectnya di instansiasi
-// maka dari itu diperlukan ketelitian ketika menimpa property 
+// maka dari itu diperlukan ketelitian ketika menimpa property
 // karena kalau salah tidak akan error malah menambah property yang baru,
 // sehingga diperlukanlah visibility
 $produk2 = new Produk();
